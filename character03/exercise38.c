@@ -13,6 +13,7 @@ int main()
 	printf("x1=%d\tx2=%d\n", x1, x2);
 
 //TODO 要求输出c1,c2的ASCII码，用putchar()还是printf()
+	putchar(c1);
 
 	return 0;
 }
