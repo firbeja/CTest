@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdbool.h>
 
 //判断闰年，书上给了4个程序以供分析
 //1.用变量leap代表是否为闰年，if嵌套实现
@@ -66,12 +67,51 @@ void fun2(int year)
 
 void fun3(int year)
 {
-
+	int leap = -1;
+	if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+	{
+		leap = 1;
+	}
+	else
+	{
+		leap = 0;
+	}
+	printLeap(leap, year);
 }
 
 void fun4(int year)
 {
-
+	bool leap = false;
+	if(year % 4 == 0)
+	{
+		if(year % 100 != 0)
+		{
+			leap = true;
+		}
+		else
+		{
+			if(year % 400 == 0)
+			{
+				leap = true;
+			}
+			else
+			{
+				leap = false;
+			}
+		}
+	}
+	else
+	{
+		leap = false;
+	}
+	if(leap == true)
+	{
+		printf("%d是闰年\n", year);
+	}
+	else
+	{
+		printf("%d不是闰年\n", year);
+	}
 }
 
 void printLeap(int leap, int year)
