@@ -35,8 +35,8 @@ void fun1(float a, float b, float c)
 	disc = b*b - 4*a*c;
 	p = -1*(b/(2*a));
 	q = sqrt(-disc)/(2*a);
-	printf("x1=%5.2f + %5.2fi\n", p, q);
-	printf("x2=%5.2f - %5.2fi\n", p, q);
+	printf("x1=%f + %fi\n", p, q);
+	printf("x2=%f - %fi\n", p, q);
 }
 
 void fun2(float a, float b, float c)

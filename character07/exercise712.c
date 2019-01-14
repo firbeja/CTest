@@ -27,6 +27,6 @@ float fun(int a, int b, int c, int d)
 		x1 = x0 - f/f_d;
 		w = x0 - x1;
 		printf("w=%f\tx0=%f\tx1=%f\n", w, x0, x1);
-	}while(fabs(w) >= 10e-6);
+	}while(fabs(w) >= 10e-8);
 	return x0;
 }
