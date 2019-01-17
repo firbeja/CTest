@@ -9,6 +9,8 @@ void pmin(int **min);
 void fun2();
 void covrt_2(int (*p)[5]);
 void add(int **min, int *temp);
+//模仿《学习辅导》第四题的”递归“的上面那个技巧，来改这个add()函数，就是把数组元素往后移。
+void add_answer(int **min, int *temp);
 void change(int *max, int **min, int (*p)[5]);
 
 void fun1()
@@ -196,7 +198,8 @@ void covrt_2(int (*p)[5])
 			if(*temp > *(*(p+i)+j))
 			{
 				temp = *(p+i)+j;
-				add(min, temp);
+				//add(min, temp);
+				add_answer(min, temp);
 			}
 			temp = min[3];
 		}
@@ -217,6 +220,17 @@ void add(int **min, int *temp)
 		*(min+3-j) = *(min+3-j-1);
 	}
 	*(min+i) = temp;
+}
+
+void add_answer(int **min, int *temp)
+{
+	int i;
+	for(i = 2; *temp < **(min+i) && i >= 0; i--)
+	{
+		*(min+i+1) = *(min+i);
+	}
+	*(min+i+1) = temp;
+	printf("+++++i=%d: %d %d %d %d\n", i+1, *min[0], *min[1], *min[2], *min[3]);
 }
 
 void change(int *max, int **min, int (*p)[5])

@@ -46,6 +46,11 @@ void covrt(int **p, int n)
 	*p = *min;
 	*min = temp;
 
+	//《学习辅导》，加一个判断，解决冲突
+	if(max == p)
+	{
+		max = min;
+	}
 	temp = *(p+n-1);
 	*(p+n-1) = *max;
 	*max = temp;
