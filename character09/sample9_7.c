@@ -32,7 +32,7 @@ int main()
 	Count c;
 	Date d, *pd;
 	Num e;
-	//Num *pe;//好像不行
+	//Num *pe;	//好像不行
 	PNum pe;
 	PEnum penum;
 	PFun pfun;
